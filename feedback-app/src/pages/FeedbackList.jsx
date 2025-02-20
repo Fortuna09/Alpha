@@ -14,6 +14,7 @@ function FeedbackList() {
       try {
         const response = await axios.get("http://localhost:5000/api/feedbacks");
         setFeedbacks(response.data);
+      // eslint-disable-next-line no-unused-vars
       } catch (error) {
         setError("Erro ao buscar feedbacks. Tente novamente mais tarde.");
       } finally {
