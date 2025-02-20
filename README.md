@@ -166,6 +166,8 @@ http://localhost:5000/api-docs
 │   │   │   ├── LandingPage.css
 │   │   │   ├── FeedbackForm.css
 │   │   │   ├── FeedbackList.css
+│   │   │   ├── Footer.css
+│   │   │   ├── Header.css
 │   │   ├── App.jsx
 │   ├── package.json
 │   ├── .gitignore
