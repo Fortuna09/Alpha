@@ -17,13 +17,23 @@ function LandingPage() {
               Sua opinião é essencial! Deixe seu feedback e nos ajude a evoluir.
             </p>
             <button className="button-feedback">
-            <Link to="/feedback" className="btn btn-primary btn-lg">
-              Deixar Feedback
-            </Link>
+              <Link to="/feedback" className="btn btn-primary btn-lg">
+                Deixar Feedback
+              </Link>
             </button>
+            
           </div>
+          <button className="button-feedback">
+              <Link to="/feedbacks" className="btn btn-secondary">
+                Ver Feedbacks
+              </Link>
+            </button>
+
         </div>
+
       </main>
+
+
 
       <Footer />
     </div>
