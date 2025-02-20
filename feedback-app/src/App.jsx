@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import FeedbackForm from "./pages/FeedbackForm";
+import FeedbackList from "./pages/FeedbackList"; // Importando a nova página
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/feedback" element={<FeedbackForm />} />
+        <Route path="/feedbacks" element={<FeedbackList />} /> 
       </Routes>
     </Router>
   );
