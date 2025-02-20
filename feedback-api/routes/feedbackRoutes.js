@@ -4,12 +4,37 @@ const Feedback = require("../models/Feedback");
 const router = express.Router();
 
 /**
- * @route POST /api/feedbacks
- * @description Cria um novo feedback
- * @access Público
- * @param {Object} req - Objeto da requisição contendo os dados do feedback
- * @param {Object} res - Objeto de resposta do Express
- * @returns {JSON} Mensagem de sucesso ou erro
+ * @swagger
+ * /api/feedbacks:
+ *   post:
+ *     summary: Cria um novo feedback
+ *     description: Salva um feedback no banco de dados
+ *     tags:
+ *       - Feedback
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 example: "João Silva"
+ *               email:
+ *                 type: string
+ *                 example: "joao@email.com"
+ *               rating:
+ *                 type: integer
+ *                 example: 5
+ *               message:
+ *                 type: string
+ *                 example: "Ótimo atendimento!"
+ *     responses:
+ *       201:
+ *         description: Feedback salvo com sucesso
+ *       400:
+ *         description: Erro ao salvar feedback
  */
 router.post("/", async (req, res) => {
   try {
@@ -23,12 +48,44 @@ router.post("/", async (req, res) => {
 });
 
 /**
- * @route GET /api/feedbacks
- * @description Retorna todos os feedbacks cadastrados
- * @access Público
- * @param {Object} req - Objeto da requisição
- * @param {Object} res - Objeto de resposta do Express
- * @returns {Array} Lista de feedbacks
+ * @swagger
+ * /api/feedbacks:
+ *   get:
+ *     summary: Lista todos os feedbacks
+ *     description: Retorna um array com todos os feedbacks armazenados
+ *     tags:
+ *       - Feedback
+ *     responses:
+ *       200:
+ *         description: Lista de feedbacks retornada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                     example: "65abcdef1234567890123456"
+ *                   name:
+ *                     type: string
+ *                     example: "João Silva"
+ *                   email:
+ *                     type: string
+ *                     example: "joao@email.com"
+ *                   rating:
+ *                     type: integer
+ *                     example: 5
+ *                   message:
+ *                     type: string
+ *                     example: "Ótimo atendimento!"
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *                   updatedAt:
+ *                     type: string
+ *                     format: date-time
  */
 router.get("/", async (req, res) => {
   try {
