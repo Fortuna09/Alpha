@@ -1,0 +1,105 @@
+  /* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Layout geral */
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  /* Corpo principal */
+  .main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../assets/background_landing_page.jpg") no-repeat center center/cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .content {
+    color: white;
+    max-width: 80%;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+  
+  /* Botão estilizado */
+.button-feedback{
+    padding: 0;
+    border: 0;
+}
+
+  .btn-primary {
+    padding: 8px 16px; /* Reduzi o padding para deixar menor */
+    font-size: 0.9rem; /* Diminuí o tamanho da fonte */
+    border-radius: 15px; /* Reduzi o arredondamento */
+    transition: 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .btn-primary {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .subtitle {
+      font-size: 1rem;
+    }
+  
+    .btn-primary {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  

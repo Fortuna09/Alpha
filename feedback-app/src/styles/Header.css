@@ -1,0 +1,27 @@
+/* Cabeçalho */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    color: white;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .image-logo {
+    width: 80px;
+    position: absolute;
+    left: 20px;
+  }
+  
+  .name-header {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
