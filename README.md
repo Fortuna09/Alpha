@@ -7,6 +7,7 @@ O **Alpha Feedback System** é um sistema web que permite que os usuários envie
 ✅ Listagem de feedbacks enviados.  
 ✅ API REST para manipulação dos feedbacks.  
 ✅ Banco de dados MongoDB para armazenamento seguro.  
+✅ Documentação da API disponível via Swagger.  
 
 ---
 
@@ -24,6 +25,7 @@ O **Alpha Feedback System** é um sistema web que permite que os usuários envie
 - Mongoose (ORM para MongoDB)
 - Dotenv (variáveis de ambiente)
 - CORS (Cross-Origin Resource Sharing)
+- Swagger (documentação da API)
 
 ### **Banco de Dados**
 - MongoDB Atlas (versão em nuvem do MongoDB)
@@ -83,6 +85,21 @@ cd seu-repositorio
    ```
 
 📌 **O site estará acessível em:** `http://localhost:5173`
+
+---
+
+## 📖 Documentação da API (Swagger)
+A documentação interativa da API pode ser acessada via Swagger:
+
+📌 **URL da Documentação:**
+```
+http://localhost:5000/api-docs
+```
+
+### **Como testar a API pelo Swagger?**
+1. Inicie o backend (`npm start`).
+2. Abra o navegador e vá até `http://localhost:5000/api-docs`.
+3. Explore as rotas, faça requisições e veja as respostas da API.
 
 ---
 
@@ -163,7 +180,7 @@ cd seu-repositorio
 ✅ **Validação dos dados antes de salvar no banco** (React Hook Form + Zod e Mongoose).  
 ✅ **Uso correto do `.gitignore`** para evitar o commit de `node_modules/` e `.env`.  
 ✅ **Mensagens de commit padronizadas** seguindo **Commit Patterns**.  
-✅ **API documentada com DocBlocks**.  
+✅ **API documentada com Swagger e DocBlocks**.  
 
 ---
 
