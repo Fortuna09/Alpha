@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import FeedbackForm from "./pages/FeedbackForm";
-import FeedbackList from "./pages/FeedbackList"; // Importando a nova página
+import FeedbackList from "./pages/FeedbackList"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
