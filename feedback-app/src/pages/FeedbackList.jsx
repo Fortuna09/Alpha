@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/FeedbackList.css";
+import apiClient from '../api/apiClient';
 
 function FeedbackList() {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -12,9 +13,8 @@ function FeedbackList() {
   useEffect(() => {
     async function fetchFeedbacks() {
       try {
-        const response = await axios.get("http://localhost:5000/api/feedbacks");
+        const response = await apiClient.get("/api/feedbacks");
         setFeedbacks(response.data);
-      // eslint-disable-next-line no-unused-vars
       } catch (error) {
         setError("Erro ao buscar feedbacks. Tente novamente mais tarde.");
       } finally {

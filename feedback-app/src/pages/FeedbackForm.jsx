@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import axios from "axios"; // Importando Axios
+import axios from "axios"; 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/FeedbackForm.css";
+import apiClient from '../api/apiClient';
 
 const feedbackSchema = z.object({
   name: z.string().min(3, "O nome deve ter pelo menos 3 caracteres."),
@@ -26,17 +27,16 @@ function FeedbackForm() {
     resolver: zodResolver(feedbackSchema),
   });
 
-  // Função para enviar o feedback para o backend
   const onSubmit = async (data) => {
-    try {
-      await axios.post("http://localhost:5000/api/feedbacks", data);
-      alert("Feedback enviado com sucesso!");
-      reset(); // Limpa o formulário após envio bem-sucedido
-    } catch (error) {
-      console.error("Erro ao enviar feedback:", error);
-      alert("Erro ao enviar feedback. Tente novamente.");
-    }
-  };
+  try {
+    await apiClient.post("/api/feedbacks", data);
+    alert("Feedback enviado com sucesso!");
+    reset();
+  } catch (error) {
+    console.error("Erro ao enviar feedback:", error);
+    alert("Erro ao enviar feedback. Tente novamente.");
+  }
+};
 
   return (
     <div className="feedback-page">
