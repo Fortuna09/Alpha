@@ -2,39 +2,33 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/LandingPage.css";
+import backgroundImage from "../assets/background_landing_page.jpg";
 
 function LandingPage() {
   return (
-    <div className="landing-page">
+    <div className="landing-page-container">
       <Header />
-
-      {/* Corpo principal */}
-      <main className="main-content">
-        <div className="overlay">
-          <div className="content text-center">
+      <main className="main-content-split">
+        <div className="content-panel">
+          <div className="content-wrapper">
             <h2 className="title">Bem-vindo ao Alpha Feedback</h2>
             <p className="subtitle">
-              Sua opinião é essencial! Deixe seu feedback e nos ajude a evoluir.
+              Sua opinião transforma nosso produto. Nos ajude a evoluir.
             </p>
-            <button className="button-feedback">
-              <Link to="/feedback" className="btn btn-primary btn-lg">
+            <div className="button-group">
+              <Link to="/feedback" className="btn btn-primary">
                 Deixar Feedback
               </Link>
-            </button>
-            
-          </div>
-          <button className="button-feedback">
               <Link to="/feedbacks" className="btn btn-secondary">
                 Ver Feedbacks
               </Link>
-            </button>
-
+            </div>
+          </div>
         </div>
 
+        <div className="image-panel" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        </div>
       </main>
-
-
-
       <Footer />
     </div>
   );
