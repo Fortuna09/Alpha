@@ -7,9 +7,22 @@ const swaggerJsdoc = require("swagger-jsdoc");
 
 const app = express();
 
-app.use(cors({
-  origin: process.env.FRONTEND_URL
-}));
+const allowedOrigins = [
+  'http://localhost:4200',        
+  process.env.FRONTEND_URL        
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
